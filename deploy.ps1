@@ -6,4 +6,4 @@ ng build
 
 popd
 
-copy -Recurse angular/dist/angular static
+copy -Recurse -Force angular/dist/angular static
