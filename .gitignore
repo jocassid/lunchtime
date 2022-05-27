@@ -4,4 +4,8 @@ db.sqlite3
 **/__pycache__/
 static/angular
 main/migrations/
+node_modules/
+angular/.angular/
+angular/.vscode/
+
 

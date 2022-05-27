@@ -1,17 +1,32 @@
+<h1>{{title}}</h1>
 
-<div>
+<div class="page">
+  <h2>Login</h2>
   <div>
-    <label for="username">Username</label>
-    <input id="username" type="text"/>
+    <label for="username">Username:</label>
+    <input type="text" id="username"/>
   </div>
-
   <div>
-    <label for="password">Password</label>
-    <input id="password" type="password"/>
+    <label for="password">Password:</label>
+    <input type="password" id="password"/>
   </div>
-
-  <button>Log In</button>
 </div>
 
+<div class="page">
+  <h2>Main (search)</h2>
 
+  <label>
+    Price
+    <select>
+      <option>Under $10</option>
+      <option>$10 - $15</option>
+      <option>$15 - $20</option>
+      <option>Over $20</option>
+    </select>
+  </label>
 
+  <label>
+    <input type="checkbox"/> Healthy?
+  </label>
+
+</div>
