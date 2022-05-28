@@ -1,11 +1,10 @@
 
 .idea/
-db.sqlite3
 **/__pycache__/
-static/angular
-main/migrations/
 node_modules/
 angular/.angular/
 angular/.vscode/
-
-
+angular/node_modules/
+db.sqlite3
+main/migrations/
+static/angular
