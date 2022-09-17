@@ -24,3 +24,16 @@
 </label>
 
 <button>Search</button>
+
+<div>
+  <h3>Search Results:</h3>
+  <table>
+    <tr>
+      <td>{{ search_result.name | uppercase }}</td>
+      <td>
+        <div>{{ search_result.address_line1 }}</div>
+        <div>{{ search_result.address_line2 }}</div>
+      </td>
+    </tr>
+  </table>
+</div>

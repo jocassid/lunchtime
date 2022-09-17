@@ -1,5 +1,6 @@
 
 export interface SearchResult {
-  // id: number;
-  // name: string;
+  name: string;
+  address_line1: string;
+  address_line2: string;
 }
