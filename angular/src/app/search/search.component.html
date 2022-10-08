@@ -1,16 +1,36 @@
 <p>from search.component.html</p>
   <h2>Main (search)</h2>
 
-<label class="priceLabel">
-  Price
-  <select>
-    <option>---</option>
-    <option *ngFor="let priceRange of priceRanges"
-            value="{{ priceRange.id }}">
-      {{ priceRange.low }} - {{ priceRange.high }}
-    </option>
-  </select>
-</label>
+  <div class="searchControls">
+    <div class="searchControlsColumn">
+      <div class="searchControlLabel">Price</div>
+      <button class="searchToggleButton"
+              [ngClass]="getPriceToggleClass(priceRange)"
+              *ngFor="let priceRange of priceRanges"
+              (click)="togglePriceRange(priceRange)">
+        {{ priceRange.low }} - {{ priceRange.high }}
+      </button>
+    </div>
+    <div class="searchControlsColumn">
+      <div class="searchControlLabel">Speed</div>
+
+    </div>
+    <div class="searchControlsColumn">
+      ???
+    </div>
+  </div>
+<!--<label class="priceLabel">-->
+<!--  Price-->
+<!--  -->
+
+<!--  <select>-->
+<!--    <option>-&#45;&#45;</option>-->
+<!--    <option *ngFor="let priceRange of priceRanges"-->
+<!--            value="{{ priceRange.id }}">-->
+<!--      {{ priceRange.low }} - {{ priceRange.high }}-->
+<!--    </option>-->
+<!--  </select>-->
+<!--</label>-->
 
 <label>
   <input type="checkbox"/> Healthy?
@@ -30,14 +50,20 @@
 <button (click)="search()">Search</button>
 
 <div>
-  <h3>Search Results:</h3>
   <table>
-    <tr>
-      <td>{{ search_result.name | uppercase }}</td>
-      <td>
-        <div>{{ search_result.address_line1 }}</div>
-        <div>{{ search_result.address_line2 }}</div>
-      </td>
-    </tr>
+    <caption>Search Results</caption>
+    <thead>
+      <th>Restaurant</th>
+      <th>Address</th>
+    </thead>
+    <tbody>
+      <tr [attr.data-location-id]="location.id"
+          *ngFor="let location of locations">
+        <td>
+          {{ location.restaurant.name }}
+        </td>
+        <td>{{ location.street_address }}</td>
+      </tr>
+    </tbody>
   </table>
 </div>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import {SearchResult} from "../search_result";
-import {PriceRange} from "../price_range";
-import {SpeedOption} from "../SpeedOption";
+import {Location} from "../models";
+import {PriceRange} from "../models";
+import {SpeedOption} from "../models";
 
 import {DataService} from "../data.service";
 
@@ -20,11 +20,7 @@ export class SearchComponent implements OnInit {
   priceRanges: PriceRange[] = [];
   speedOptions: SpeedOption[] = [];
 
-  search_result: SearchResult = {
-    name: "Jersey Mike's",
-    address_line1: "5957 S Sunbury Rd",
-    address_line2: "Westerville, OH 43081"
-  };
+  locations: Location[] = [];
 
   constructor(private dataService: DataService) { }
 
@@ -33,8 +29,19 @@ export class SearchComponent implements OnInit {
     this.loadSpeedOptions();
   }
 
+  togglePriceRange(priceRange: PriceRange): void{
+    console.log('togglePriceRange');
+    // this should cycle PriceRange.cssClass between: 'searchToggleButtonInclude',
+    // 'searchToggleButtonExclude' and ''
+  }
+
+  getPriceToggleClass(priceRange: PriceRange): string{
+    return priceRange.cssClass;
+  }
+
   search(): void {
     console.log('search');
+    this.locations = this.dataService.search();
   }
 
   loadPriceRanges(): void {

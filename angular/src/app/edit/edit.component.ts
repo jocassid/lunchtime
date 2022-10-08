@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import {SearchResult} from "../search_result";
-import {PriceRange} from "../price_range";
-import {SpeedOption} from "../SpeedOption";
+import {PriceRange} from "../models";
+import {SpeedOption} from "../models";
+
 
 import {DataService} from "../data.service";
 
