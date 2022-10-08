@@ -1,12 +1,14 @@
 <p>from search.component.html</p>
   <h2>Main (search)</h2>
 
-<label>
+<label class="priceLabel">
   Price
   <select>
-    <option>Under $15</option>
-    <option>$15 - $20</option>
-    <option>Over $20</option>
+    <option>---</option>
+    <option *ngFor="let priceRange of priceRanges"
+            value="{{ priceRange.id }}">
+      {{ priceRange.low }} - {{ priceRange.high }}
+    </option>
   </select>
 </label>
 
@@ -17,13 +19,15 @@
 <label>
   Speed:
   <select>
-    <option>Quick</option>
-    <option>Not So Quick</option>
-    <option>Slow</option>
+    <option>---</option>
+    <option *ngFor="let speedOption of speedOptions"
+            value="{{ speedOption.id }}">
+      {{ speedOption.name }}
+    </option>
   </select>
 </label>
 
-<button>Search</button>
+<button (click)="search()">Search</button>
 
 <div>
   <h3>Search Results:</h3>

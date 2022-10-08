@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SearchComponent } from './search/search.component';
 import { EditComponent } from './edit/edit.component';
+import { OptionsPriceRangeComponent } from './options-price-range/options-price-range.component';
+import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SearchComponent,
-    EditComponent
+    EditComponent,
+    OptionsPriceRangeComponent,
+    RestaurantListComponent
   ],
   imports: [
     BrowserModule,
